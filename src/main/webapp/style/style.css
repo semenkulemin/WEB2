@@ -1,0 +1,91 @@
+@font-face {
+    font-family: "HelveticaNeueCyr";
+}
+* {
+    font-family: HelveticaNeueCyr, serif;
+    text-align: center;
+    font-weight: normal;
+}
+body{
+    background-color: #EEE2DC
+}
+header {
+    font-size: 0.6em;
+    top: 0;
+}
+
+footer {
+    bottom: 0;
+}
+
+header, footer {
+    z-index: 10;
+    width: 100%;
+    position: fixed;
+    color: white;
+    background-color: #123C69;
+    left: 0;
+}
+
+#wholeContent {
+    background-color: #BAB2B5;
+    width: 80%;
+    margin: 100px auto 30px;
+}
+
+thead * {
+    margin-top: 4%
+}
+
+h3:first-letter{
+    font-size: 120%;
+}
+
+input, select{
+    cursor: pointer /* Р¤РѕСЂРјР° РєСѓСЂСЃРѕСЂР° РІ РїСЂРµРґРµР»Р°С… СЌР»РµРјРµРЅС‚Р°*/
+
+}
+
+input[type=text]{
+    width: 100px;
+}
+
+.animation:hover{
+    transform: scale(1.05);
+}
+
+.shades:hover , .animation:hover {
+    transition: 0.5s
+}
+
+a img{
+    margin-top: 5px;
+    margin-bottom: 5px;
+    width: 80px;
+    height: 50px;
+}
+
+.shades {
+    box-shadow: 0 0 10px 1px black
+}
+
+.shades:hover {
+    box-shadow: 0 0 20px 2px black
+}
+
+#outputTable {
+    top: 200px;
+    border: 1px solid #AC3B61;
+    border-collapse: collapse;
+    margin: auto;
+    width: 80%;
+}
+
+#outputTable th {
+    background-color: #AC3B61;
+    color: white;
+}
+
+#outputTable * {
+    padding: 15px;
+}
