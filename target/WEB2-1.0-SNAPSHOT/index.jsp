@@ -10,8 +10,8 @@
 <head>
     <meta charset="UTF-8">
     <title>WEB2</title>
-    <link href="stylesheets/style.css" rel="stylesheet">
-    <link href="stylesheets/button.css" rel="stylesheet">
+    <link href="style/style.css" rel="stylesheet">
+    <link href="style/button.css" rel="stylesheet">
 </head>
 
 <body>
@@ -98,8 +98,8 @@
     <span class="shadow"></span>
 </button>
 <br><br><br>
+<jsp:include page="table.jsp" />
 <br><br><br><br><br><br>
-
 <footer class="animation shades">
     <br>
     Sugar Daddy corporation. 2020 <br>
@@ -109,7 +109,9 @@
 </footer>
 <script src="scripts/validation.js"></script>
 <script>
-
+    const sendReq = function (info) {
+        fetch("<%= request.getContextPath()%>" + info, {method: 'GET'}).then(response => response.text()).then(res => document.querySelector('#outputTable').innerHTML = res)
+    }
 </script>
 </body>
 </html>

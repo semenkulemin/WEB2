@@ -19,7 +19,7 @@
 <header class="animation shades">
     <h1>Проверка попадания точки в график</h1>
     <h2>Кулёмин Семён & Какунин Константин, Р3230</h2>
-    <h2>Вариант 2612</h2>
+    <h2>Вариант 2653</h2>
 </header>
 <table id="wholeContent" class="shades">
 
@@ -99,7 +99,7 @@
 </button>
 <br><br><br>
 <jsp:include page="table.jsp" />
-<br><br><br>
+<br><br><br><br><br><br>
 <footer class="animation shades">
     <br>
     Sugar Daddy corporation. 2020 <br>
@@ -109,7 +109,9 @@
 </footer>
 <script src="scripts/validation.js"></script>
 <script>
-
+    const sendReq = function (info) {
+        fetch("<%= request.getContextPath()%>" + info, {method: 'GET'}).then(response => response.text()).then(res => document.querySelector('#outputTable').innerHTML = res)
+    }
 </script>
 </body>
 </html>

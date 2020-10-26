@@ -90,14 +90,14 @@ picture.addEventListener('click', (event) => {
         x = event.clientX - c.x;
         y = event.clientY - c.y;
         //Coordinates in numbers
-        const num_x = (x - 200) * r_value / 140;
-        const num_y = -(y - 200) * r_value / 140;
-
-        //ADD SEND REQUEST
-
+        const num_x = ((x - 200) * r_value) / 140;
+        const num_y = (-(y - 200) * r_value) / 140;
+        redraw(x, y);
+        let info = '/check?x=' + num_x + '&y=' + num_y + "&r=" + r_value;
+        sendReq(info);
         reset();
     } else {
-        alert("Выберите радиус")
+        alert("Выберите R")
     }
 });
 
@@ -115,27 +115,23 @@ button_result.addEventListener('click', () => {
 
         x = fix(svg_x);
         y = fix(svg_y);
-
-        //ADD SEND REQUEST
-
+        redraw(x, y);
+        let info = '/check?x=' + x_value + '&y=' + y_value + "&r=" + r_value;
+        sendReq(info);
         reset();
+    } else {
+        if (y_value == undefined) {
+            alert("Выберите Y в диапазоне от -5 до 5")
+        }
+        if (r_value == undefined) {
+            alert("Выберите R")
+        }
     }
 });
 
 //
 const reset = function () {
-    momenalRedrawDot();
     y_text.value = "";
     r_value = undefined;
-    list_of_r_buttons.forEach(button => button.checked = false)
+    list_of_r_buttons.forEach(button => button.checked = false);
 };
-//Making a point
-/*const showPoint = function (x, y, r) {
-    let svg_x = 2 * (x * 70 / r) + 200;
-    let svg_y = -2 * (y * 70 / r) + 200;
-
-    x = fix(svg_x);
-    y = fix(svg_y);
-
-    redraw(x, y);
-};*/
